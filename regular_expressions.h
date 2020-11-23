@@ -10,14 +10,17 @@
 using namespace std;
 
 
+const int INF = numeric_limits<int>::max();
+
+
 enum Symbols {
-    letter_a = 97,
-    letter_b = 98,
-    letter_c = 99,
-    letter_1 = 49,
-    operation_union = 43,
-    operation_multi = 46,
-    operation_star = 42
+    LetterA = 97,
+    LetterB = 98,
+    LetterC = 99,
+    Epsilon = 49,
+    OperationUnion = 43,
+    OperationMulti = 46,
+    OperationStar = 42
 };
 
 
@@ -39,7 +42,6 @@ public:
     Solution(const string& regular_expression, const char& letter);
     int FindSolution();
 private:
-    const int INF = numeric_limits<int>::max();
     stack <RegularExpression> regular_expressions_;
     string polish_notation_;
     char letter_;
@@ -47,6 +49,7 @@ private:
     RegularExpression Union();
     RegularExpression Multi();
     RegularExpression Star();
+    pair<RegularExpression, RegularExpression> GetTopTwoElements();
 };
 
 

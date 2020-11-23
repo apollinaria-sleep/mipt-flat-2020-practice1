@@ -10,12 +10,12 @@ int main() {
     Solution solve(regexp, letter);
     try {
         int answer = solve.FindSolution();
-        if (answer == numeric_limits<int>::max()) {
+        if (answer == INF) {
             cout << "INF";
         } else {
             cout << answer;
         }
-    } catch (IncorrectRegularExpression& except) {
+    } catch (IncorrectRegularExpression& ex) {
         cout << "ERROR";
     }
 
